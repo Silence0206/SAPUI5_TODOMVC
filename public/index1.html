@@ -1,0 +1,99 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+
+    <title>To do MVC</title>
+
+    <script src="UI5/resources/sap-ui-core.js" id="sap-ui-bootstrap" data-sap-ui-libs="sap.m" data-sap-ui-theme="sap_belize"></script>
+    <!-- only load the main library "sap.m" and the Belize theme -->
+
+    <script>
+        var text = new sap.m.Text({
+            //text: '{/time}'
+        });
+
+        text.bindProperty('text', {
+            path: '/time',
+            formatter: function(time) {
+                return time.substring(0, 100)
+            }
+        })
+        var m = new sap.ui.model.json.JSONModel();
+        m.setData({
+            time: new Date().toISOString()
+        })
+        text.setModel(m)
+
+
+
+        text.placeAt('content')
+
+
+        setInterval(function() {
+            m.setProperty('/time', new Date().toISOString())
+                // m.time = new Date()
+        }, 1000)
+
+
+
+
+
+
+        // var p = new sap.m.Panel({
+        //     content: {
+        //         path: '/list',
+        //         template: new sap.m.StandardListItem({
+        //             title: '{letter}'
+        //         }),
+        //         // template: new sap.m.Panel({
+        //         //     content: [
+        //         //         new sap.m.Text({
+        //         //             text: '{letter}'
+        //         //         })
+        //         //     ]
+        //         // })
+        //     }
+        // });
+        // p.setModel(m)
+        // m.setProperty('/list', [{
+        //     letter: 'a'
+        // }, {
+        //     letter: 'b'
+        // }, {
+        //     letter: 'c'
+        // }])
+        var p = new sap.m.List({
+            items: {
+                path: '/list',
+                template: new sap.m.StandardListItem({
+                    title: '{letter}'
+                }),
+                // template: new sap.m.Panel({
+                //     content: [
+                //         new sap.m.Text({
+                //             text: '{letter}'
+                //         })
+                //     ]
+                // })
+            }
+        });
+        p.setModel(m)
+        m.setProperty('/list', [{
+            letter: 'a1'
+        }, {
+            letter: 'b'
+        }, {
+            letter: 'c'
+        }])
+        p.placeAt('content')
+    </script>
+
+</head>
+
+<body id="content" class="sapUiBody">
+</body>
+
+</html>
