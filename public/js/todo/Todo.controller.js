@@ -14,7 +14,7 @@
             this.getView().setModel(this.model);
             this.model.setProperty('/todolist', [{
                     id: jQuery.sap.uid(),
-                    Name: 'example...done',
+                    Name: 'example....done!',
                     done: true
                 },
                 {
