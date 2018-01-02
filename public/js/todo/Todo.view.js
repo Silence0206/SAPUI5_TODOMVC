@@ -67,7 +67,7 @@
 
             this.list = rows;
 
-            var itemsleft = new sap.m.Label({
+            var itemsleft = new sap.m.Label("openNums", {
                 text: {
                     path: "/todolist",
                     formatter: function(items) {

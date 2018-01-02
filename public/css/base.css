@@ -17,3 +17,14 @@
     -o-transition: all 0.2s;
     transition: all 0.2s;
 } */
+
+#openNums {
+    color: red;
+    font-size: 1em;
+    display: inline-block;
+    margin-top: 0.6em;
+}
+
+#ClearCompletedTodos {
+    margin-top: -0.3em
+}
