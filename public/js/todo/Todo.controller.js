@@ -1,10 +1,8 @@
 (function() {
     'use strict';
-    jQuery.sap.require('todo.TodoPersistency');
 
     sap.ui.controller('todo.Todo', {
         model: null,
-        store: new todo.TodoPersistency('todos'),
         list: [],
         onInit: function() {
             this.model = new sap.ui.model.json.JSONModel();

@@ -105,6 +105,14 @@
 
             var clearCompleted = new sap.m.Button('ClearCompletedTodos', {
                     text: 'Clear Completed',
+                    visible: {
+                        path: '/todolist',
+                        formatter: function(todos) {
+                            return todos.some(function(element, index, array) {
+                                return element.done === true;
+                            });
+                        }
+                    }
                 })
                 .attachPress(function() {
                     oController.clearCompletedTodos()
