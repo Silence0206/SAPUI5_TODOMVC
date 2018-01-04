@@ -22,7 +22,7 @@
                 this.setValue('');
             });
             inputBox.data('sap-sf-automation-input', 'silenceInp', true);
-            debugger;
+
 
             // this.controls.push(inputBox);
             var horizen = new sap.ui.layout.HorizontalLayout({
