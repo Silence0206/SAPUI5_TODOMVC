@@ -12,7 +12,7 @@
                 })
                 // this.controls.push(completeAll);
 
-            var inputBox = new sap.m.Input({
+            var inputBox = new sap.m.Input("inputSilence", {
                 showIcon: true,
                 placeholder: "what needs to be done",
                 width: "40em"
@@ -21,6 +21,9 @@
                 oController.createTodo(this.getProperty('value'));
                 this.setValue('');
             });
+            inputBox.data('sap-sf-automation-input', 'silenceInp', true);
+            debugger;
+
             // this.controls.push(inputBox);
             var horizen = new sap.ui.layout.HorizontalLayout({
                 content: [
