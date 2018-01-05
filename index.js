@@ -2,7 +2,7 @@ var http = require('http');
 var express = require('express');
 var app = express();
 console.log(__dirname)
-app.use("/public", express.static(__dirname + '/public'));
+app.use("/", express.static(__dirname + '/public'));
 
 // 创建服务端
 http.createServer(app).listen('8080', function() {
